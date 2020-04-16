@@ -81,7 +81,8 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                  CURSO   Laravel
+                  CURSO   Laravel yeryrtyrty
+                  
                 </div>
 
                 <div class="links">
