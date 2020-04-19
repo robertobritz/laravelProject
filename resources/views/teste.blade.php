@@ -8,5 +8,6 @@
 </head>
 <body>
     {{ $teste }}
+    {{ $teste2 }}
 </body>
 </html>
