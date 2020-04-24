@@ -1,3 +1,7 @@
-<div class="alerta">
-	<p>Alerta - {{ $content ?? 'default'}}</p> {{-- colocamos o ?? para que não gere erro, definimios padrão 'default' --}}
-</div>
+@if ($errors->any())
+	<ul>
+		@foreach ($errors->all() as $error)
+	<li>{{$error}}</li>
+		@endforeach
+	</ul>	
+@endif	

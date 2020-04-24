@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 
+Route::any('produtos2/search', 'ProdutoController2@search')->name('produtos2.search');
+
 route::resource('produtos2', 'ProdutoController2');
 
 route::delete('produtos/{id}', 'ProductController@destroy')->name('produtos.destroy');

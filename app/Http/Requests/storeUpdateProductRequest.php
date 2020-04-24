@@ -23,10 +23,13 @@ class storeUpdateProductRequest extends FormRequest
      */
     public function rules()
     {
+
+        $id = $this->segment(2); //A id que manda na URL http://laravel-repositories.test/produtos2/101/edit '101' é ID, criaremos então uma exceção no return
         return [
-            'name' => 'required|min:3|max:50',
+            'name' => "required|min:3|max:50|unique:products,name,{$id},id", //,name é o campo da exceção, comparando com a ID que recebeu
             'description' => 'nullable|min:3|max:50000',     
-            'photo' => 'required|image'
+            'price' => "required", // máscar para dinheiro
+            'image' => 'image',
         ];
     }
 
@@ -35,7 +38,8 @@ class storeUpdateProductRequest extends FormRequest
        return [
         'name.required' => 'Nome é obrigatório',
         'name.min' => 'Ops! Precisa informar pelo menos 3 caracteres',
-        'photo.required' => 'Ops! é necessário enviar uma foto'
+        'image.required' => 'Ops! é necessário enviar uma foto',
+        'price.required' => 'Ops! é necessário informar um preço',
        ];
     }
 }
